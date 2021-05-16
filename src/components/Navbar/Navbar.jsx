@@ -4,7 +4,6 @@ import styles from './Navbar.module.sass'
 const Navbar = () => {
     return (
         <div className={styles.navbar}>
-            
         </div>
     )
 }
