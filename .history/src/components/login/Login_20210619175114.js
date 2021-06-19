@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import {useHistory } from 'react-router-dom'
 import { auth } from '../../firebase/firebase'
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 const Login = () => {
     const history=useHistory()
     const user=auth.currentUser
     const [login, setLogin]=useState('')
     const [password, setPassword]=useState('')
+    const [userIsLogged]=useAuthState(auth)
     const changeLogin=(event)=>{
         setLogin(event.target.value)
     }

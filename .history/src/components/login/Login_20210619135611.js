@@ -1,25 +1,22 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import {useHistory } from 'react-router-dom'
 import { auth } from '../../firebase/firebase'
-
 const Login = () => {
     const history=useHistory()
-    const user=auth.currentUser
     const [login, setLogin]=useState('')
     const [password, setPassword]=useState('')
+
     const changeLogin=(event)=>{
         setLogin(event.target.value)
     }
     const changePassword=(event)=>{
         setPassword(event.target.value)
     }
-    const loginSubmit=(event)=>{
-        event.preventDefault()
+    const loginSubmit=()=>{
         auth.signInWithEmailAndPassword(login, password)
             .then((userCredential) => {
                  var user = userCredential.user;
-                 if(user)
-                 history.push('/account')
+                 console.log(user)
         })
         .catch((error) => {
             var errorCode = error.code;
@@ -31,11 +28,7 @@ const Login = () => {
     const registration=()=>{
         history.push("/registration")
     }
-    useEffect(() => {
-        if(user!==null){
-            history.push('/account')
-        }
-    }, [history, user])
+
     return (
         <div className="bg-gradient-primary height-100vh">
         <div className="container">

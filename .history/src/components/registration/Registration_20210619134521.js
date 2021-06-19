@@ -22,7 +22,7 @@ const Registration = () => {
     }
 
     const login=()=>{
-        history.push('./login')
+      
     }
     const registrarion=(event)=>{
         event.preventDefault()

@@ -22,10 +22,6 @@ const Registration = () => {
     }
 
     const login=()=>{
-        history.push('./login')
-    }
-    const registrarion=(event)=>{
-        event.preventDefault()
         if(user.password===user.repeatPassword){
             auth.createUserWithEmailAndPassword(user.email, user.password)
             .then((userCredential) => {
@@ -34,9 +30,9 @@ const Registration = () => {
             .catch((error) => {
               var errorCode = error.code;
               var errorMessage = error.message;
-              console.log(errorCode, errorMessage)
             });
         }
+        history.push("/login")
     }
 
     return (
@@ -51,7 +47,7 @@ const Registration = () => {
                                     <div className="text-center">
                                         <h1 className="h4 text-gray-900 mb-4">Stwórz konto!</h1>
                                     </div>
-                                    <form className="user" onSubmit={registrarion}>
+                                    <form className="user">
                                         <div className="form-group row">
                                             <div className="col-sm-6 mb-3 mb-sm-0">
                                                 <input name="name" type="text" className="form-control form-control-user"

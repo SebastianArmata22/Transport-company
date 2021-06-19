@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import {useHistory } from 'react-router-dom'
 import { auth } from '../../firebase/firebase'
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 const Login = () => {
     const history=useHistory()
-    const user=auth.currentUser
     const [login, setLogin]=useState('')
     const [password, setPassword]=useState('')
+    const [userIsLogged]=useAuthState(auth)
     const changeLogin=(event)=>{
         setLogin(event.target.value)
     }
@@ -31,11 +32,7 @@ const Login = () => {
     const registration=()=>{
         history.push("/registration")
     }
-    useEffect(() => {
-        if(user!==null){
-            history.push('/account')
-        }
-    }, [history, user])
+
     return (
         <div className="bg-gradient-primary height-100vh">
         <div className="container">
