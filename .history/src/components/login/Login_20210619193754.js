@@ -4,7 +4,6 @@ import { auth } from '../../firebase/firebase'
 
 const Login = () => {
     const history=useHistory()
-    const user= auth.currentUser
     const [login, setLogin]=useState('')
     const [password, setPassword]=useState('')
     const changeLogin=(event)=>{
@@ -32,10 +31,10 @@ const Login = () => {
         history.push("/registration")
     }
     useEffect(() => {
-        if(user!==null){
+        if(auth.currentUser!==null){
             history.push('/account')
         }
-    })
+    }, [ auth,history])
     return (
         <div className="bg-gradient-primary height-100vh">
         <div className="container">

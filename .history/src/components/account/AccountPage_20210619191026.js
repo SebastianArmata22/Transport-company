@@ -4,7 +4,8 @@ import Navbar from '../Navbar/Navbar'
 
 
 const AccountPage = () => {
-    const userData=database.collection("users").doc(`${auth.currentUser.uid}`)
+    const currentuser= auth.currentUser
+    const userData=database.collection("users").doc(`${currentuser.uid}`)
     const [user, setUser]=useState({})
     userData.get().then((doc) => {
         if (doc.exists) {

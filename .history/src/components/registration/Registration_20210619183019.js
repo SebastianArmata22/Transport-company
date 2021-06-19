@@ -25,11 +25,11 @@ const Registration = () => {
     const login=()=>{
         history.push('./login')
     }
-    const registrarion=(event)=>{
+    const registrarion=async(event)=>{
         event.preventDefault()
         if(user.password===user.repeatPassword){
             auth.createUserWithEmailAndPassword(user.email, user.password)
-            .then(async (userCredential) => {
+            .then((userCredential) => {
               const userData = userCredential.user;
               await usersCollection.doc(userData.uid).set({name: user.name, lastName: user.lastName, email: user.email, type: user.type}).then(() => {
                 console.log("Document successfully written!");

@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router'
-import { auth, database } from '../../firebase/firebase'
+import { auth } from '../../firebase/firebase'
 
 const Registration = () => {
-    const usersCollection = database.collection('users')
     const history=useHistory()
     const [user, setUser]=useState({
         name: "",
@@ -29,11 +28,9 @@ const Registration = () => {
         event.preventDefault()
         if(user.password===user.repeatPassword){
             auth.createUserWithEmailAndPassword(user.email, user.password)
-            .then(async (userCredential) => {
-              const userData = userCredential.user;
-              await usersCollection.doc(userData.uid).set({name: user.name, lastName: user.lastName, email: user.email, type: user.type}).then(() => {
-                console.log("Document successfully written!");
-            });
+            .then((userCredential) => {
+              const user = userCredential.user;
+              
             })
             .catch((error) => {
               var errorCode = error.code;
