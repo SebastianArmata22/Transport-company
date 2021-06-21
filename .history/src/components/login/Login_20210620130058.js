@@ -32,7 +32,7 @@ const Login = () => {
         history.push("/registration")
     }
     useEffect(() => {
-        if(user!==null){
+        if(user.currentUser!==null){
             history.push('/account')
         }
     },[user,history])

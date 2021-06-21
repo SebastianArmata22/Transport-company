@@ -32,10 +32,10 @@ const Login = () => {
         history.push("/registration")
     }
     useEffect(() => {
-        if(user!==null){
+        if(user.currentUser!==null){
             history.push('/account')
         }
-    },[user,history])
+    },[user.currentUser,history])
     return (
         <div className="bg-gradient-primary height-100vh">
         <div className="container">

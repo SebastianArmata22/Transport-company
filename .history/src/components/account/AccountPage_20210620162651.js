@@ -19,7 +19,7 @@ useEffect(() => {
     }).catch((error) => {
         console.log("Error getting document:", error);
     });
-}, [])
+}, [userData])
     return (
         <div className={classes.container}>
             <nav>

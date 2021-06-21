@@ -6,12 +6,12 @@ import TimeTable from '../timetable/TimeTable'
 import classes from './account.module.scss'
 
 const AccountPage = () => {
+    const userData=database.collection("users").doc(`${auth.currentUser.uid}`)
     const [user, setUser]=useState({})
 
 useEffect(() => {
-    database.collection("users").doc(`${auth.currentUser.uid}`).get().then((doc) => {
+    userData.get().then((doc) => {
         if (doc.exists) {
-            console.log(doc.data(), "ds")
             setUser(doc.data());
         } else {
             console.log("No such document!");
@@ -19,7 +19,7 @@ useEffect(() => {
     }).catch((error) => {
         console.log("Error getting document:", error);
     });
-}, [])
+}, [userData])
     return (
         <div className={classes.container}>
             <nav>
