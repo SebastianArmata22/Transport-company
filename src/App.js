@@ -9,10 +9,6 @@ import AccountPage from './components/account/AccountPage';
 function App() {
   return (
     <div className="App">
-<<<<<<< HEAD
-      <Navbar />
-      <h1>Arkadiusz Horwat</h1>
-=======
        <Router>
             <Switch>
               <Route path="/login">
@@ -26,7 +22,6 @@ function App() {
               </Route>
             </Switch>
           </Router>
->>>>>>> dd9e39cc5c17031310fe2f94bb3d5d06c0c90910
     </div>
   );
 }
