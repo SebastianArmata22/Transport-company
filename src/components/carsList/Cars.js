@@ -13,24 +13,30 @@ function cars() {
                 <td>Mercedes KR1231</td>
                 <td>Krakow Dworzec</td>
                 <td>
-                    <i class="fa fa-trash-o"></i>
-                    <i class="fa fa-pencil"></i>
+                    <span className={classes.fa}>
+                        <i class="fa fa-trash-o"></i>
+                        <i class="fa fa-pencil"></i>
+                    </span>
                 </td>
             </tr>
             <tr>
                 <td>Mercedes KR1231</td>
                 <td>Krakow Dworzec</td>
                 <td>
-                    <i class="fa fa-trash-o"></i>
-                    <i class="fa fa-pencil"></i>
+                    <span className={classes.fa}>
+                        <i class="fa fa-trash-o"></i>
+                        <i class="fa fa-pencil"></i>
+                    </span>
                 </td>
             </tr>
             <tr>
                 <td>Mercedes KR1231</td>
                 <td>Krakow Dworzec</td>
                 <td>
-                    <i class="fa fa-trash-o"></i>
-                    <i class="fa fa-pencil"></i>
+                    <span className={classes.fa}>
+                        <i class="fa fa-trash-o"></i>
+                        <i class="fa fa-pencil"></i>
+                    </span>
                 </td>
             </tr>
         </table>
