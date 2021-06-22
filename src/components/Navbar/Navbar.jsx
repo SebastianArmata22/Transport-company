@@ -1,10 +1,3 @@
-<<<<<<< HEAD:src/components/NavbarHome/NavbarHome.jsx
-import React, {useState} from 'react'
-import styles from './NavbarHome.module.sass'
-import './hamburger/hamburgers.scss'
-
-const NavbarHome = () => {
-=======
 import React, { useState } from 'react'
 import { useHistory } from 'react-router'
 import { auth } from '../../firebase/firebase'
@@ -17,7 +10,6 @@ const Navbar = () => {
         setShowMenu(prev=>!prev)
     }
     const logout=()=>{
->>>>>>> main:src/components/Navbar/Navbar.jsx
 
         auth.signOut().then(() => {
             history.push("/login")
