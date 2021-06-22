@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
-import styles from './Navbar.module.sass'
+import styles from './NavbarHome.module.sass'
 import './hamburger/hamburgers.scss'
 
-const Navbar = () => {
+const NavbarHome = () => {
 
     const [isMenuOpen, setMenuOpen] = useState(false)
 
@@ -51,4 +51,4 @@ const Navbar = () => {
     )
 }
 
-export default Navbar
+export default NavbarHome
