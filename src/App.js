@@ -6,7 +6,6 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import AccountPage from './components/account/AccountPage';
 import AdminPage from './components/admins/AdminPage';
 
-
 function App() {
   return (
     <div className="App">

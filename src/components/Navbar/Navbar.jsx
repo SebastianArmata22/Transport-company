@@ -16,9 +16,8 @@ const Navbar = ({user}) => {
           }).catch((error) => {
             console.log(error)
           });
-
-
     }
+
     return (
         <div className={classes.barContainer}>
         <div onClick={changeShowMenu} className={classes.profile}>
