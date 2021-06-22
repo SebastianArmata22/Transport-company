@@ -5,7 +5,8 @@ import Registration from './components/registration/Registration';
 import Homepage from './components/Homepage/Homepage';
 import Contactpage from './components/Contactpage/Contactpage'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-
+import AccountPage from './components/account/AccountPage';
+import AdminPage from './components/admins/AdminPage';
 
 function App() {
   return (
@@ -23,6 +24,12 @@ function App() {
               </Route>
               <Route path="/registration">
                 <Registration />
+              </Route>
+              <Route path="/account">
+                <AccountPage />
+              </Route>
+              <Route path="/admin">
+                <AdminPage />
               </Route>
             </Switch>
           </Router>

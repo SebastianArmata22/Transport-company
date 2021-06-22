@@ -1,0 +1,22 @@
+.container{
+    main{
+        padding: 1rem;
+    }
+
+}
+.points{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    >div{
+        width: 5rem;
+        height: 5rem;
+        border-radius: 2.5rem;
+        color: #fff;
+        background-color: #4e73df;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+}
