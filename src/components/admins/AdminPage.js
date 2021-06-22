@@ -28,11 +28,11 @@ const AdminPage = () => {
                         {
                         user.id === 1 ? 
                         <div>
-                            <button id='grafik' onClick={onClickEvent}>Grafik</button>
-                            <button id='samochody' onClick={onClickEvent}>Samochody</button>
-                            <button id='pracownicy' onClick={onClickEvent}>Pracownicy</button>
-                            <button id='przejazdy' onClick={onClickEvent}>Przejazdy</button>
-                            <button id='raporty' onClick={onClickEvent}>Raporty</button>
+                            <button id='grafik' className={classes.buttonNav} onClick={onClickEvent}>Grafik</button>
+                            <button id='samochody' className={classes.buttonNav} onClick={onClickEvent}>Samochody</button>
+                            <button id='pracownicy' className={classes.buttonNav} onClick={onClickEvent}>Pracownicy</button>
+                            <button id='przejazdy' className={classes.buttonNav} onClick={onClickEvent}>Przejazdy</button>
+                            <button id='raporty' className={classes.buttonNav} onClick={onClickEvent}>Raporty</button>
                         </div> : ''
                         }
                         </h6>

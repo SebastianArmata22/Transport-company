@@ -21,3 +21,17 @@
     }
 
 }
+
+.buttonNav{
+    background-color: transparent;
+    color: #2d78b6;
+    border: none;
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-left: 1px solid white;
+}
+.buttonNav:hover{
+    color: #0a3558;
+}
