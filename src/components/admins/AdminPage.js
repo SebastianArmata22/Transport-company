@@ -3,6 +3,7 @@ import Navbar from '../Navbar/Navbar'
 import Schedule from '../workSchedule/Schedule';
 import Cars from '../carsList/Cars';
 import classes from './admins.module.scss';
+import Workers from '../workersList/Workers';
 
 const AdminPage = () => {
     const [buttonId, setButtonId] = useState('');
@@ -46,7 +47,7 @@ const AdminPage = () => {
                         buttonId === 'samochody' && <Cars />
                         }
                         {
-                        buttonId === 'pracownicy' && 'pracownicy'
+                        buttonId === 'pracownicy' && <Workers />
                         }
                         {
                         buttonId === 'przejazdy' && 'przejazdy'
