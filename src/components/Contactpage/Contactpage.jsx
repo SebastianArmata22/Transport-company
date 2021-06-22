@@ -1,13 +1,13 @@
 import React from 'react'
 import styles from './Contactpage.module.sass'
-import Navbar from '../Navbar/Navbar'
+import NavbarHome from '../NavbarHome/NavbarHome'
 import GoogleMapReact from 'google-map-react'
 import MapContainer from './MapContainer/MapContainer'
 
 const Contactpage = () => {
     return (
         <div className={styles.container}>
-            <Navbar />
+            <NavbarHome />
             <div className={styles.page}>
                 <div className={styles.leftContainer}>
                     <h1>KKbus</h1>

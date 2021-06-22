@@ -1,11 +1,11 @@
 import React from 'react'
-import Navbar from '../Navbar/Navbar'
+import NavbarHome from '../NavbarHome/NavbarHome'
 import styles from './Homepage.module.sass'
 
 const Homepage = () => {
     return (
         <div className={styles.container}>
-            <Navbar />
+            <NavbarHome />
             <div className={styles.page}>
                 <div className={styles.textContainer}>
                     <h1>
