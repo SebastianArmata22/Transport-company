@@ -1,0 +1,54 @@
+.container
+    height: 100vh
+    width: 100vw
+    background-color: #fff
+    overflow-x: hidden
+    z-index: -3
+
+.page
+    height: 92%
+    width: 100%
+    background-color: white
+    position: relative
+    z-index: 0
+
+
+.image
+    position: absolute
+    bottom: 10px
+    right: 10px
+    height: 50%
+    z-index: -1
+
+.textContainer
+    position: absolute
+    top: 20%
+    left: 10%
+    color: #4e73df
+    h1
+        font-weight: 600
+        font-size: 3em
+        padding-bottom: 10px
+    h2
+        font-weight: 600
+        padding-top: 10px
+        
+.clientPanel
+    outline: none
+    border-radius: 10px
+    padding: 10px
+    border: none
+    background-color: orange
+    font-weight: 600
+    color: white
+@media (max-width: 600px)
+    .image
+        height: 30%
+        bottom: 0
+        right: -80px
+
+    .page
+        height: 90%
+
+    .textContainer
+        width: 100%
