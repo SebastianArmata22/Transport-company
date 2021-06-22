@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
 import Navbar from '../Navbar/Navbar'
 import Schedule from '../workSchedule/Schedule';
-import classes from './account.module.scss'
+import Cars from '../carsList/Cars';
+import classes from './admins.module.scss';
 
 const AdminPage = () => {
     const [buttonId, setButtonId] = useState('');
@@ -42,7 +43,7 @@ const AdminPage = () => {
                         buttonId === 'grafik' && <Schedule />
                         }
                         {
-                        buttonId === 'samochody' && 'samochody'
+                        buttonId === 'samochody' && <Cars />
                         }
                         {
                         buttonId === 'pracownicy' && 'pracownicy'
