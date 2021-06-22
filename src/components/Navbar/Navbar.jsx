@@ -1,53 +1,43 @@
-import React, {useState} from 'react'
-import styles from './Navbar.module.sass'
-import './hamburger/hamburgers.scss'
-
+import React, { useState } from 'react'
+import { useHistory } from 'react-router'
+import { auth } from '../../firebase/firebase'
+import classes from './Navbar.module.scss'
+import profile from './undraw_profile.svg'
 const Navbar = () => {
+    const [showMenu, setShowMenu]=useState(false)
+    const history=useHistory()
+    const changeShowMenu = ()=>{
+        setShowMenu(prev=>!prev)
+    }
+    const logout=()=>{
 
-    const [isMenuOpen, setMenuOpen] = useState(false)
+        auth.signOut().then(() => {
+            history.push("/login")
+          }).catch((error) => {
+            console.log(error)
+          });
+    }
 
+    const user={
+        name: 'Arkadiusz',
+        lastName: 'Horwat',
+        id: 1
+    }
     return (
-        <div className={styles.container}>
-            <div className={styles.header}>
-            <div className={styles.title}>
-                <a href="/">KKBus</a>
-            </div>
-            <div className={styles.navbarItems}>
-                <div className={styles.navbarItem}>
-                    <a href="/">Rozkłady</a>
-                </div>
-                <div className={styles.navbarItem}>
-                    <a href="/contact">Kontakt</a>
-                </div>
-                {/* <div className={styles.navbarItemLogin}>
-                    <a href="/">Panel klienta</a>
-                </div> */}
-                <button className={styles.navbarItemLogin}>
-                    Panel klienta
-                </button>
-                <div className={styles.hamburger}>
-                    <button className={isMenuOpen ? "hamburger hamburger--elastic is-active" : "hamburger"} type="button" onClick={() => setMenuOpen(!isMenuOpen)}>
-                        <span className="hamburger-box">
-                            <span className="hamburger-inner"></span>
-                        </span>
-                    </button>
-                </div>
+        <div className={classes.barContainer}>
+        <div onClick={changeShowMenu} className={classes.profile}>
+            <span className="mr-2 d-none d-lg-inline text-gray-600 small">{`${user.name} ${user.lastName}`}</span>
+            <img className="img-profile rounded-circle" alt="profile" src={profile} />
+        </div>
+        <div style={{display: showMenu ? "block" : "none"}}>
+        <div className="dropdown-menu dropdown-menu-right shadow animated--grow-in">
+                <p className="dropdown-item pointer" onClick={logout}>
+                    <i className="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Wyloguj się
+                </p>
             </div>
         </div>
-        {isMenuOpen && 
-        <div className={styles.menuList}>
-                    <div className={styles.responsiveNavbarItem}>
-                        <a href="/">Rozkłady</a>
-                    </div>
-                    <div className={styles.responsiveNavbarItem}>
-                        <a href="/contact">Kontakt</a>
-                    </div>
-                    <div className={styles.responsiveNavbarItem}>
-                        <a href="/">Panel klienta</a>
-                    </div>
-        </div>}
-        </div>
-         
+    </div>
     )
 }
 
