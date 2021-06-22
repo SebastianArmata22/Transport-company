@@ -1,0 +1,41 @@
+.container
+    height: 100vh
+    width: 100vw
+    background-color: #fff
+    overflow-x: hidden
+    z-index: -3
+    
+.page
+    height: 92%
+    width: 100%
+    background-color: white
+    position: relative
+    z-index: 0
+    display: flex
+    flex-direction: row
+
+.leftContainer
+    width: 50%
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    height: 100%
+
+.rightContainer
+    width: 50%
+    display: flex
+    justify-content: center
+    align-items: center
+
+@media (max-width: 600px)
+    .page
+        flex-direction: column
+
+    .rightContainer
+        height: auto
+        width: 100%
+
+    .leftContainer
+        height: auto
+        width: 100%
