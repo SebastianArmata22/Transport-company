@@ -19,7 +19,7 @@ const Login = () => {
             .then((userCredential) => {
                  var user = userCredential.user;
                  if(user)
-                 history.push('/account')
+                 history.push('/admin')
         })
         .catch((error) => {
             var errorCode = error.code;
@@ -33,7 +33,7 @@ const Login = () => {
     }
     useEffect(() => {
         if(user!==null){
-            history.push('/account')
+            history.push('/admin')
         }
     },[user,history])
     return (

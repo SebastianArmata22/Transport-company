@@ -1,22 +1,32 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import Navbar from '../Navbar/Navbar'
 import Schedule from '../workSchedule/Schedule';
 import Cars from '../carsList/Cars';
 import classes from './admins.module.scss';
 import Workers from '../workersList/Workers';
+import { auth, database } from '../../firebase/firebase';
 
 const AdminPage = () => {
     const [buttonId, setButtonId] = useState('');
 
-    const user={
-        name: 'Arkadiusz',
-        lastName: 'Horwat',
-        id: 1
-    }
-
     const onClickEvent = event => {
         setButtonId(event.target.id);
     }
+
+    const [user, setUser]=useState({})
+
+    useEffect(() => {
+        database.collection("users").doc(`${auth.currentUser.uid}`).get().then((doc) => {
+            if (doc.exists) {
+                console.log(doc.data(), "ds")
+                setUser(doc.data());
+            } else {
+                console.log("No such document!");
+            }
+        }).catch((error) => {
+            console.log("Error getting document:", error);
+        });
+    }, [])
 
     return (
         <div className={classes.container}>
@@ -28,7 +38,7 @@ const AdminPage = () => {
                     <div className="card-header py-3">
                         <h6 className="m-0 font-weight-bold text-primary">
                         {
-                        user.id === 1 ? 
+                        user.type === 0 ? 
                         <div>
                             <button id='grafik' className={classes.buttonNav} onClick={onClickEvent}>Grafik</button>
                             <button id='samochody' className={classes.buttonNav} onClick={onClickEvent}>Samochody</button>

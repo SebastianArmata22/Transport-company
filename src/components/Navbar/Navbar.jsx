@@ -3,7 +3,7 @@ import { useHistory } from 'react-router'
 import { auth } from '../../firebase/firebase'
 import classes from './Navbar.module.scss'
 import profile from './undraw_profile.svg'
-const Navbar = () => {
+const Navbar = ({user}) => {
     const [showMenu, setShowMenu]=useState(false)
     const history=useHistory()
     const changeShowMenu = ()=>{
@@ -18,11 +18,6 @@ const Navbar = () => {
           });
     }
 
-    const user={
-        name: 'Arkadiusz',
-        lastName: 'Horwat',
-        id: 1
-    }
     return (
         <div className={classes.barContainer}>
         <div onClick={changeShowMenu} className={classes.profile}>
