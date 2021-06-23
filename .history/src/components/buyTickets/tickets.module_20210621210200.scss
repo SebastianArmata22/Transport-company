@@ -1,0 +1,47 @@
+.ticketInfo{
+
+    span{
+        font-weight: 700;
+    }
+    h4{
+        margin-bottom: 1rem;
+    }
+    input{
+        width: 20rem;
+        border: 1px solid #bdc3c7;
+        height: 3rem;
+        border-radius: 0.5rem;
+        outline: none;
+        padding: 0 1rem;
+        margin-bottom: 1rem;
+    }
+
+}
+.formPerson{
+    display: flex;
+    flex-direction: column;
+}    
+.buyTicketBtn{
+    padding: 1rem 2rem;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    background-color: #4e73df;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    &:hover{
+        background-color: #224abe;
+    }
+}
+.ticketPanel{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}

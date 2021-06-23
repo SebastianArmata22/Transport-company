@@ -1,0 +1,21 @@
+.ticketInfo{
+    span{
+        font-weight: 700;
+    }
+    h4{
+        margin-bottom: 1rem;
+    }
+}
+.formPerson{
+    display: flex;
+    flex-direction: column;
+    input{
+        width: 20rem;
+        border: 1px solid #bdc3c7;
+        height: 3rem;
+        border-radius: 0.5rem;
+        outline: none;
+        padding: 0 1rem;
+        margin: 1rem;
+    }
+}
