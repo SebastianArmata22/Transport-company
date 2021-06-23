@@ -1,0 +1,14 @@
+.row{
+    button{
+        padding: 1rem 2rem;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    background-color: #4e73df;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    &:hover{
+        background-color: #224abe;
+    }
+}
+}

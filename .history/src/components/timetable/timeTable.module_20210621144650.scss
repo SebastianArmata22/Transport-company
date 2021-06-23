@@ -1,0 +1,70 @@
+.timeTable{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    form{
+        select, input{
+            border: 1px solid #bdc3c7;
+            height: 3rem;
+            border-radius: 0.5rem;
+            outline: none;
+            padding: 0 1rem;
+            margin: 1rem;
+        }
+        input[type=submit]{
+        background-color: #4e73df;
+        color: #fff;
+        cursor: pointer;
+        border: none;
+        &:hover{
+            background-color: #224abe;
+        }
+        }
+    }
+}
+.containerItem{
+    width: 100%;
+}
+.item{
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(133, 135, 150,0.3);
+    p{
+        margin-bottom: 0;
+        font-size: 2rem;
+        span{
+            font-size: 0.8rem;
+        }
+    }
+    .hoursContainer{
+        width: calc(100% - 20rem);
+    }
+}
+.flexItem{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.buyTicket{
+    width: 20rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    button{
+        padding: 1rem 2rem;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    background-color: #4e73df;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    &:hover{
+        background-color: #224abe;
+    }
+    }
+}
