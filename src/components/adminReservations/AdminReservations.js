@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { auth, database } from '../../firebase/firebase';
+import { database } from '../../firebase/firebase';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import AdminReservation from './AdminReservation';
 
@@ -19,6 +19,7 @@ const AdminReservations = () => {
             }).catch((error) => {
                 console.log("Error getting document:", error);
             });
+            return console.log('done')
         })
     },[reservations])
 

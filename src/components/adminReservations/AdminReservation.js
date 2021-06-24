@@ -1,7 +1,7 @@
 import React from 'react'
 import classes from '../reservations/reservations.module.scss'
 import { FaTrash } from "react-icons/fa";
-import { auth, database } from '../../firebase/firebase';
+import { database } from '../../firebase/firebase';
 import { NotificationManager } from 'react-notifications';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 
@@ -24,6 +24,7 @@ const AdminReservation = ({reservation,setreservationsData}) => {
                 }).catch((error) => {
                     console.log("Error getting document:", error);
                 });
+                return console.log('done')
             })
 
         }).catch((error) => {
