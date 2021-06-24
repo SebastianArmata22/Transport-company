@@ -4,7 +4,6 @@ import classes from './tickets.module.scss'
 import { FaTrash } from "react-icons/fa";
 import TicketQr from './TicketQr';
 import { auth, database } from '../../firebase/firebase';
-import { NotificationManager } from 'react-notifications';
 const Ticket = ({ticket}) => {
     const { uid } = auth.currentUser
     const [showCode, setShowCode]=useState(false)

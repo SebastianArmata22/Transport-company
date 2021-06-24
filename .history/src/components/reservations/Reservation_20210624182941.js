@@ -2,7 +2,6 @@ import React from 'react'
 import classes from './reservations.module.scss'
 import { FaTrash } from "react-icons/fa";
 import { auth, database } from '../../firebase/firebase';
-import { NotificationManager } from 'react-notifications';
 const Reservation = ({reservation}) => {
     const { uid } = auth.currentUser
     const deleteReservation=()=>{

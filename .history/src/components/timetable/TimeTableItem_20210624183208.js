@@ -1,7 +1,6 @@
 import classes from './timeTable.module.scss'
 import React from 'react'
 import { auth, database } from '../../firebase/firebase'
-import { NotificationManager } from 'react-notifications'
 
 const TimeTableItem = ({item, end,price, busStopStart, busStopEnd, date, setTickets, setShowShopping}) => {
 
