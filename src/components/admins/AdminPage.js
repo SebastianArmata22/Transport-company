@@ -4,6 +4,7 @@ import Schedule from '../workSchedule/Schedule';
 import Cars from '../carsList/Cars';
 import classes from './admins.module.scss';
 import Workers from '../workersList/Workers';
+import AdminReservations from '../adminReservations/AdminReservations';
 import { auth, database } from '../../firebase/firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
 
@@ -62,7 +63,7 @@ const AdminPage = () => {
                         buttonId === 'pracownicy' && <Workers />
                         }
                         {
-                        buttonId === 'przejazdy' && 'przejazdy'
+                        buttonId === 'przejazdy' && <AdminReservations />
                         }
                         {
                         buttonId === 'raporty' && 'raporty'
