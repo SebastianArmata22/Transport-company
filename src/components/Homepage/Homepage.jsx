@@ -26,7 +26,7 @@ const Homepage = () => {
                         Panel klienta
                     </button>
                 </div>
-            <img src="/images/bus.svg" className={styles.image}/>
+            <img src="/images/bus.svg" alt='img' className={styles.image}/>
             </div>
         </div>
     )

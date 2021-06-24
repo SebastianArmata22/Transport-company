@@ -1,7 +1,6 @@
 import React from 'react'
 import styles from './Contactpage.module.sass'
 import NavbarHome from '../NavbarHome/NavbarHome'
-import GoogleMapReact from 'google-map-react'
 import MapContainer from './MapContainer/MapContainer'
 
 const Contactpage = () => {

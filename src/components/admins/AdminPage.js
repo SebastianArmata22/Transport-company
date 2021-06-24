@@ -5,9 +5,11 @@ import Cars from '../carsList/Cars';
 import classes from './admins.module.scss';
 import Workers from '../workersList/Workers';
 import { auth, database } from '../../firebase/firebase';
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 const AdminPage = () => {
     const [buttonId, setButtonId] = useState('');
+    const [userIsLogged]=useAuthState(auth);
 
     const onClickEvent = event => {
         setButtonId(event.target.id);
@@ -16,17 +18,17 @@ const AdminPage = () => {
     const [user, setUser]=useState({})
 
     useEffect(() => {
-        database.collection("users").doc(`${auth.currentUser.uid}`).get().then((doc) => {
-            if (doc.exists) {
-                console.log(doc.data(), "ds")
-                setUser(doc.data());
-            } else {
-                console.log("No such document!");
-            }
-        }).catch((error) => {
-            console.log("Error getting document:", error);
-        });
-    }, [])
+        userIsLogged &&  database.collection("users").doc(`${auth.currentUser.uid}`).get().then((doc) => {
+             if (doc.exists) {
+                 console.log(doc.data(), "ds")
+                 setUser(doc.data());
+             } else {
+                 console.log("No such document!");
+             }
+         }).catch((error) => {
+             console.log("Error getting document:", error);
+         });
+     }, [userIsLogged])
 
     return (
         <div className={classes.container}>

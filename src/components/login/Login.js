@@ -33,7 +33,7 @@ const Login = () => {
         history.push("/registration")
     }
     if(userIsLogged){
-        history.push('/account')
+        history.push('/admin')
     }
 
     return (
