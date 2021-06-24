@@ -17,21 +17,10 @@ const Login = () => {
     const loginSubmit=(event)=>{
         event.preventDefault()
         auth.signInWithEmailAndPassword(login, password)
-            .then(() => {
-                 database.collection("users").doc(`${auth.currentUser.uid}`).get().then((doc) => {
-                    if (doc.exists) {
-                        if(doc.data().type===1)
-                        history.push('/account')
-                        else{
-                            console.log(doc.data())
-                            history.push('./admin')
-                        }
-                    } else {
-                        console.log("No such document!");
-                    }
-                }).catch((error) => {
-                    console.log("Error getting document:", error);
-                });
+            .then((userCredential) => {
+                 var user = userCredential.user;
+                 if(user)
+                 history.push('/admin')
         })
         .catch((error) => {
             var errorCode = error.code;
@@ -49,7 +38,6 @@ const Login = () => {
                 if(doc.data().type===1)
                 history.push('/account')
                 else{
-                    console.log(doc.data())
                     history.push('./admin')
                 }
             } else {
