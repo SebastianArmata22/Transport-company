@@ -33,14 +33,14 @@ function Cars() {
         <div className="card shadow mb-4">
         <div className="card-header py-3">
             <h6 className="m-0 font-weight-bold text-primary">
-                Dodaj Bus
+                Dodaj pojazd
             </h6>
         </div>
         <div className="card-body">
-        <form onSubmit={addBus}>
+        <form onSubmit={addBus} className={classes.addCar}>
             <input type='text' value={busData.number} onChange={onChangeInput} name='number' placeholder='numer rejestracyjny'></input>
             <input type='text' value={busData.location} onChange={onChangeInput} name='location' placeholder='miejsce postoju'></input>
-            <input type='submit'></input>
+            <input type='submit' value='Dodaj'></input>
         </form>
         </div>
         </div>
