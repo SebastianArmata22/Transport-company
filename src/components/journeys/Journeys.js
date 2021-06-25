@@ -4,7 +4,7 @@ import BoughtTickets from '../AdminTickets/BoughtTickets';
 
 function Journeys() {
     return (
-        <div>
+        <div title='journeys'>
             <AdminReservations />
             <BoughtTickets />
         </div>

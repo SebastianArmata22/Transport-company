@@ -62,7 +62,7 @@ const Login = () => {
     }
 
     return (
-        <div className="bg-gradient-primary height-100vh">
+        <div className="bg-gradient-primary height-100vh" title='login'>
         <div className="container">
             <div className="row justify-content-center">
             <div className="col-xl-10 col-lg-12 col-md-9">

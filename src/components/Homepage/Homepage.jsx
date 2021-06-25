@@ -10,7 +10,7 @@ const Homepage = () => {
         history.push('/login')
     }
     return (
-        <div className={styles.container}>
+        <div className={styles.container} title='homePage'>
             <NavbarHome />
             <div className={styles.page}>
                 <div className={styles.textContainer}>

@@ -5,7 +5,7 @@ import MapContainer from './MapContainer/MapContainer'
 
 const Contactpage = () => {
     return (
-        <div className={styles.container}>
+        <div className={styles.container} title='contactPage'>
             <NavbarHome />
             <div className={styles.page}>
                 <div className={styles.leftContainer}>

@@ -12,7 +12,7 @@ import {NotificationContainer} from 'react-notifications';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" title='App'>
        <Router>
             <Switch>
               <Route path="/" exact>

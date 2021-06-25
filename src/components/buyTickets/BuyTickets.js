@@ -8,7 +8,7 @@ const BuyTickets = () => {
     const queryToBase = database.collection("tickets").doc(uid).collection('ticket')
     const [tickets] = useCollectionData (queryToBase, {idField: 'id'})
     return (
-        <div className="card shadow mb-4">
+        <div className="card shadow mb-4" title='buyTickets'>
         <div className="card-header py-3">
             <h6 className="m-0 font-weight-bold text-primary">
                 Kupione bilety

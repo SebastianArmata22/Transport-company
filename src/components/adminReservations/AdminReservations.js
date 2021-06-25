@@ -26,7 +26,7 @@ const AdminReservations = () => {
     
 
     return (
-        <div className="card shadow mb-4">
+        <div className="card shadow mb-4" title='admin-reservations'>
         <div className="card-header py-3">
             <h6 className="m-0 font-weight-bold text-primary">
                 Rezerwacje
