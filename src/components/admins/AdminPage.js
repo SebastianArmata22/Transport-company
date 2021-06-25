@@ -4,9 +4,9 @@ import Schedule from '../workSchedule/Schedule';
 import Cars from '../carsList/Cars';
 import classes from './admins.module.scss';
 import Workers from '../workersList/Workers';
-import AdminReservations from '../adminReservations/AdminReservations';
 import { auth, database } from '../../firebase/firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import Journeys from '../journeys/Journeys';
 
 const AdminPage = () => {
     const [buttonId, setButtonId] = useState('');
@@ -65,7 +65,7 @@ const AdminPage = () => {
                         buttonId === 'pracownicy' && <Workers />
                         }
                         {
-                        buttonId === 'przejazdy' && <AdminReservations />
+                        buttonId === 'przejazdy' && <Journeys />
                         }
                     </div>
                 </div>
