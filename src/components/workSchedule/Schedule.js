@@ -16,8 +16,33 @@ class WorkSchedule extends React.Component {
           Subject: 'Ewa Rajska',
           StartTime: new Date(2021, 5, 24, 9, 0),
           EndTime: new Date(2021, 5, 24, 17, 0)
+      },{
+        Id: 5,
+        Subject: 'Małgorzata Salawa',
+        StartTime: new Date(2021, 5, 21, 8, 0),
+        EndTime: new Date(2021, 5, 21, 16, 0)
+      }, {
+          Id: 6,
+          Subject: 'Małgorzata Salawa',
+          StartTime: new Date(2021, 5, 22, 8, 0),
+          EndTime: new Date(2021, 5, 22, 16, 0)
+      },{
+        Id: 7,
+        Subject: 'Małgorzata Salawa',
+        StartTime: new Date(2021, 5, 23, 8, 0),
+        EndTime: new Date(2021, 5, 23, 16, 0)
+      }, {
+          Id: 8,
+          Subject: 'Bogdan Osiek - KrakowKat',
+          StartTime: new Date(2021, 5, 22, 9, 0),
+          EndTime: new Date(2021, 5, 22, 13, 0)
+      },{
+        Id: 8,
+        Subject: 'Bogdan Osiek - KatowiceKra',
+        StartTime: new Date(2021, 5, 22, 14, 0),
+        EndTime: new Date(2021, 5, 22, 18, 0)
       }];
-  }
+    }
   onAddClick() {
       let Data = [{
             Id: 1,
@@ -31,20 +56,18 @@ class WorkSchedule extends React.Component {
             EndTime: new Date(2021, 5, 25, 15, 30)
           }];
       this.scheduleObj.addEvent(Data);
-      this.buttonObj.element.setAttribute('disabled', 'true');
   }
 
   onDeleteClick() {
     this.scheduleObj.deleteEvent(4);
-    this.buttonObj.element.setAttribute('disabled', 'true');
   }
 
   onEditClick() {
     let Data = {
         Id: 3,
         Subject: 'Bogdan Osiek - KrakowKat',
-        StartTime: new Date(2018, 1, 11, 13, 0),
-        EndTime: new Date(2018, 1, 11, 17, 0),
+        StartTime: new Date(2021, 5, 21, 13, 0),
+        EndTime: new Date(2021, 5, 21, 17, 0),
         IsAllDay: false
     };
     this.scheduleObj.saveEvent(Data);
