@@ -34,6 +34,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: row;
+  flex-wrap: wrap;
       select, input{
           border: 1px solid #bdc3c7;
           height: 3rem;

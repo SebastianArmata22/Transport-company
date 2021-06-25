@@ -68,6 +68,32 @@ function Workers() {
         }
     }
 
+    const customStyles = {
+        control: (provided, state) => ({
+          ...provided,
+          background: '#fff',
+          borderColor: '#bdc3c7',
+          minHeight: '3rem',
+          boxShadow: state.isFocused ? null : null,
+          minWidth: '220px',
+          borderRadius: '0.5rem',
+          margin: '1rem'
+        }),
+    
+        valueContainer: (provided, state) => ({
+          ...provided,
+          height: '3rem',
+          position: 'fixed',
+          minWidth: '180px'
+        }),
+        indicatorsContainer: (provided, state) => ({
+          ...provided,
+          height: '3rem',
+          position: 'fixed',
+          marginLeft: '180px'
+        }),
+      };
+
     return (
         <>
         <div className="card shadow mb-4">
@@ -80,7 +106,7 @@ function Workers() {
         <form onSubmit={registrarion} className={classes.addWorker}>
             <input name="name" type="text" placeholder="Imię" value={newUser.name} onChange={changeUser}></input>
             <input name="lastName" type="text" placeholder="Nazwisko" value={newUser.lastName} onChange={changeUser}></input>
-            <Select name='job' value={uType.type} options={jobTitles} onChange={changeUserType} placeholder='Stanowisko'/>
+            <Select styles={customStyles} name='job' value={uType.type} options={jobTitles} onChange={changeUserType} placeholder='Stanowisko' isSearchable={false}/>
             <input name="email" type="email" placeholder="Email" value={newUser.email} onChange={changeUser}></input>
             <input name="password" type="password" placeholder="Hasło" value={newUser.password} onChange={changeUser}></input>
             <input name="repeatPassword" type="password" placeholder="Powtórz hasło" value={newUser.repeatPassword} onChange={changeUser}></input>
