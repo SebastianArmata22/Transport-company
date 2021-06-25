@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import Navbar from '../Navbar/Navbar'
-import Schedule from '../workSchedule/Schedule';
+import WorkSchedule from '../workSchedule/Schedule';
 import Cars from '../carsList/Cars';
 import classes from './admins.module.scss';
 import Workers from '../workersList/Workers';
@@ -39,33 +39,30 @@ const AdminPage = () => {
             <main>
                 <div className="card shadow mb-4">
                     <div className="card-header py-3">
-                        <h6 className="m-0 font-weight-bold text-primary">
-                        {
-                        user.type === 0 ? 
+                        <h6 className="m-0 font-weight-bold text-primary"> 
                         <div>
                             <button id='grafik' className={classes.buttonNav} onClick={onClickEvent}>Grafik</button>
                             <button id='samochody' className={classes.buttonNav} onClick={onClickEvent}>Samochody</button>
-                            <button id='pracownicy' className={classes.buttonNav} onClick={onClickEvent}>Pracownicy</button>
+                            {user.type !== 2 && <button id='pracownicy' className={classes.buttonNav} onClick={onClickEvent}>Pracownicy</button>}
                             <button id='przejazdy' className={classes.buttonNav} onClick={onClickEvent}>Przejazdy</button>
-                        </div> : ''
-                        }
+                        </div>
                         </h6>
                     </div>
                     <div className="card-body">
                         {
-                        buttonId === '' && <Schedule />
+                        buttonId === '' && <WorkSchedule user={user}/>
                         }
                         {
-                        buttonId === 'grafik' && <Schedule />
+                        buttonId === 'grafik' && <WorkSchedule user={user}/>
                         }
                         {
-                        buttonId === 'samochody' && <Cars />
+                        buttonId === 'samochody' && <Cars user={user}/>
                         }
                         {
-                        buttonId === 'pracownicy' && <Workers />
+                        buttonId === 'pracownicy' && <Workers user={user}/>
                         }
                         {
-                        buttonId === 'przejazdy' && <Journeys />
+                        buttonId === 'przejazdy' && <Journeys user={user}/>
                         }
                     </div>
                 </div>
