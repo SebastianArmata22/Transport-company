@@ -26,7 +26,7 @@ useEffect(() => {
     });
 }, [userIsLogged])
     return (
-        <div className={classes.container}>
+        <div className={classes.container} title='container'>
             {userIsLogged && <div>
             <nav>
                 <Navbar user={user}/>

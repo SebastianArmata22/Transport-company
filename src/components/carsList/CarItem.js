@@ -15,7 +15,7 @@ const CarItem = ({car,user}) => {
         });
     }
     return (
-        <tr className={classes.row}>
+        <tr className={classes.row} title='cars'>
             <td>{car.number}</td>
             <td>{car.location}</td>
             { user.type !== 0 && <td className={classes.delete} onClick={deleteCar}><FaTrash /></td>}

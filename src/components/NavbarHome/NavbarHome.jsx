@@ -12,7 +12,7 @@ const NavbarHome = () => {
     }
 
     return (
-        <div className={styles.container}>
+        <div className={styles.container} title='navbarHome'>
             <div className={styles.header}>
             <div className={styles.title}>
                 <a href="/">KKBus</a>

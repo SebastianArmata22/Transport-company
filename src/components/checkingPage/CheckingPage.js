@@ -9,7 +9,7 @@ const CheckingPage = () => {
     const history=useHistory()
     setTimeout(()=>history.push('/login'), 3000)
     return (
-        <div>
+        <div title='checking'>
             {userIsLogged ? <AccountPage />:  "Loading..."}
         </div>
     )

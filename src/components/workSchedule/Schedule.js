@@ -9,28 +9,28 @@ class WorkSchedule extends React.Component {
       this.scheduleData = [{
           Id: 3,
           Subject: 'Bogdan Osiek - KrakowKat',
-          StartTime: new Date(2021, 5, 21, 9, 0),
-          EndTime: new Date(2021, 5, 21, 13, 0)
+          StartTime: new Date(2021, 5, 27, 9, 0),
+          EndTime: new Date(2021, 5, 27, 13, 0)
       }, {
           Id: 4,
           Subject: 'Ewa Rajska',
-          StartTime: new Date(2021, 5, 24, 9, 0),
-          EndTime: new Date(2021, 5, 24, 17, 0)
+          StartTime: new Date(2021, 5, 28, 9, 0),
+          EndTime: new Date(2021, 5, 28, 17, 0)
       },{
         Id: 5,
         Subject: 'Małgorzata Salawa',
-        StartTime: new Date(2021, 5, 21, 8, 0),
-        EndTime: new Date(2021, 5, 21, 16, 0)
+        StartTime: new Date(2021, 5, 28, 8, 0),
+        EndTime: new Date(2021, 5, 28, 16, 0)
       }, {
           Id: 6,
           Subject: 'Małgorzata Salawa',
-          StartTime: new Date(2021, 5, 22, 8, 0),
-          EndTime: new Date(2021, 5, 22, 16, 0)
+          StartTime: new Date(2021, 5, 29, 8, 0),
+          EndTime: new Date(2021, 5, 29, 16, 0)
       },{
         Id: 7,
         Subject: 'Małgorzata Salawa',
-        StartTime: new Date(2021, 5, 23, 8, 0),
-        EndTime: new Date(2021, 5, 23, 16, 0)
+        StartTime: new Date(2021, 5, 30, 8, 0),
+        EndTime: new Date(2021, 5, 30, 16, 0)
       }, {
           Id: 8,
           Subject: 'Bogdan Osiek - KrakowKat',
