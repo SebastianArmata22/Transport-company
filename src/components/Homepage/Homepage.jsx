@@ -1,8 +1,14 @@
 import React from 'react'
 import NavbarHome from '../NavbarHome/NavbarHome'
 import styles from './Homepage.module.sass'
+import { useHistory } from 'react-router-dom'
 
 const Homepage = () => {
+
+    const history= useHistory()
+    const goToLogin=()=>{
+        history.push('/login')
+    }
     return (
         <div className={styles.container}>
             <NavbarHome />
@@ -22,7 +28,7 @@ const Homepage = () => {
                     <p>
                         Zaloguj się w panelu klienta żeby obejrzeć rozkłady,<br /> sprawdzić cennik i zarezerwować bilet
                     </p>
-                    <button className={styles.clientPanel}>
+                    <button className={styles.clientPanel} onClick={goToLogin}>
                         Panel klienta
                     </button>
                 </div>
