@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fullcalendar/daygrid": "^5.8.0",
+    "@fullcalendar/interaction": "^5.8.0",
+    "@fullcalendar/react": "^5.8.0",
+    "@syncfusion/ej2-react-buttons": "^19.1.63",
     "@syncfusion/ej2-react-schedule": "^19.1.69",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",

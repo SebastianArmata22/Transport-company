@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import Navbar from '../Navbar/Navbar'
-import Schedule from '../workSchedule/Schedule';
+import WorkSchedule from '../workSchedule/Schedule';
 import Cars from '../carsList/Cars';
 import classes from './admins.module.scss';
 import Workers from '../workersList/Workers';
@@ -50,10 +50,10 @@ const AdminPage = () => {
                     </div>
                     <div className="card-body">
                         {
-                        buttonId === '' && <Schedule user={user}/>
+                        buttonId === '' && <WorkSchedule user={user}/>
                         }
                         {
-                        buttonId === 'grafik' && <Schedule user={user}/>
+                        buttonId === 'grafik' && <WorkSchedule user={user}/>
                         }
                         {
                         buttonId === 'samochody' && <Cars user={user}/>
