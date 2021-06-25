@@ -39,33 +39,30 @@ const AdminPage = () => {
             <main>
                 <div className="card shadow mb-4">
                     <div className="card-header py-3">
-                        <h6 className="m-0 font-weight-bold text-primary">
-                        {
-                        user.type === 0 ? 
+                        <h6 className="m-0 font-weight-bold text-primary"> 
                         <div>
                             <button id='grafik' className={classes.buttonNav} onClick={onClickEvent}>Grafik</button>
                             <button id='samochody' className={classes.buttonNav} onClick={onClickEvent}>Samochody</button>
-                            <button id='pracownicy' className={classes.buttonNav} onClick={onClickEvent}>Pracownicy</button>
+                            {user.type !== 2 && <button id='pracownicy' className={classes.buttonNav} onClick={onClickEvent}>Pracownicy</button>}
                             <button id='przejazdy' className={classes.buttonNav} onClick={onClickEvent}>Przejazdy</button>
-                        </div> : ''
-                        }
+                        </div>
                         </h6>
                     </div>
                     <div className="card-body">
                         {
-                        buttonId === '' && <Schedule />
+                        buttonId === '' && <Schedule user={user}/>
                         }
                         {
-                        buttonId === 'grafik' && <Schedule />
+                        buttonId === 'grafik' && <Schedule user={user}/>
                         }
                         {
-                        buttonId === 'samochody' && <Cars />
+                        buttonId === 'samochody' && <Cars user={user}/>
                         }
                         {
-                        buttonId === 'pracownicy' && <Workers />
+                        buttonId === 'pracownicy' && <Workers user={user}/>
                         }
                         {
-                        buttonId === 'przejazdy' && <Journeys />
+                        buttonId === 'przejazdy' && <Journeys user={user}/>
                         }
                     </div>
                 </div>

@@ -5,7 +5,7 @@ import { database } from '../../firebase/firebase';
 import CarItem from './CarItem';
 import classes from './cars.module.scss';
 
-function Cars() {
+function Cars({user}) {
     const [busData, setBusData] = useState({})
     const queryToBase = database.collection("buses")
     const [buses] = useCollectionData (queryToBase, {idField: 'id'})
@@ -30,27 +30,30 @@ function Cars() {
 
     return (
         <>
+        {user.type !== 0 &&
         <div className="card shadow mb-4">
         <div className="card-header py-3">
             <h6 className="m-0 font-weight-bold text-primary">
                 Dodaj pojazd
             </h6>
         </div>
-        <div className="card-body">
-        <form onSubmit={addBus} className={classes.addCar}>
-            <input type='text' value={busData.number} onChange={onChangeInput} name='number' placeholder='numer rejestracyjny'></input>
-            <input type='text' value={busData.location} onChange={onChangeInput} name='location' placeholder='miejsce postoju'></input>
-            <input type='submit' value='Dodaj'></input>
-        </form>
+            <div className="card-body">
+                <form onSubmit={addBus} className={classes.addCar}>
+                    <input type='text' value={busData.number} onChange={onChangeInput} name='number' placeholder='numer rejestracyjny'></input>
+                    <input type='text' value={busData.location} onChange={onChangeInput} name='location' placeholder='miejsce postoju'></input>
+                    <input type='submit' value='Dodaj'></input>
+                </form>
+                </div>
+        
         </div>
-        </div>
+        }
         <table className={classes.tableCarList}>
             <tr>
                 <th>Pojazd</th>
                 <th>Przystanek</th>
-                <th>Usuń</th>
+                {user.type !== 0 && <th>Usuń</th>}
             </tr>
-            {buses&&buses.map(bus=><CarItem car={bus} />)}
+            {buses&&buses.map(bus=><CarItem car={bus} user={user} />)}
         </table>
         </>
     )
