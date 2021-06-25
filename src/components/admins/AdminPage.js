@@ -6,6 +6,7 @@ import classes from './admins.module.scss';
 import Workers from '../workersList/Workers';
 import { auth, database } from '../../firebase/firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import Journeys from '../journeys/Journeys';
 
 const AdminPage = () => {
     const [buttonId, setButtonId] = useState('');
@@ -46,12 +47,14 @@ const AdminPage = () => {
                             <button id='samochody' className={classes.buttonNav} onClick={onClickEvent}>Samochody</button>
                             <button id='pracownicy' className={classes.buttonNav} onClick={onClickEvent}>Pracownicy</button>
                             <button id='przejazdy' className={classes.buttonNav} onClick={onClickEvent}>Przejazdy</button>
-                            <button id='raporty' className={classes.buttonNav} onClick={onClickEvent}>Raporty</button>
                         </div> : ''
                         }
                         </h6>
                     </div>
                     <div className="card-body">
+                        {
+                        buttonId === '' && <Schedule />
+                        }
                         {
                         buttonId === 'grafik' && <Schedule />
                         }
@@ -62,10 +65,7 @@ const AdminPage = () => {
                         buttonId === 'pracownicy' && <Workers />
                         }
                         {
-                        buttonId === 'przejazdy' && 'przejazdy'
-                        }
-                        {
-                        buttonId === 'raporty' && 'raporty'
+                        buttonId === 'przejazdy' && <Journeys />
                         }
                     </div>
                 </div>

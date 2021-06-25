@@ -1,17 +1,17 @@
-.tableWorkersList {
+.tableWorkerList {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   width: 100%;
 }
   
-.tableWorkersList td, #customers th {
+.tableWorkerList td, #customers th {
   border: 1px solid #ddd;
   padding: 8px;
 }
   
-.tableWorkersList tr:nth-child(even){background-color: #f2f2f2;}
+.tableWorkerList tr:nth-child(even){background-color: #f2f2f2;}
   
-.tableWorkersList th {
+.tableWorkerList th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
@@ -28,3 +28,29 @@
   }
 }
 
+
+.addWorker{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+      select, input{
+          border: 1px solid #bdc3c7;
+          height: 3rem;
+          border-radius: 0.5rem;
+          outline: none;
+          padding: 0 1rem;
+          margin: 1rem;
+          color: #858796;
+      }
+      input[type=submit]{
+      background-color: #4e73df;
+      color: #fff;
+      cursor: pointer;
+      border: none;
+      &:hover{
+          background-color: #224abe;
+      }
+      }
+  }
