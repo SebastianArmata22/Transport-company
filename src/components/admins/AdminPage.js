@@ -47,12 +47,14 @@ const AdminPage = () => {
                             <button id='samochody' className={classes.buttonNav} onClick={onClickEvent}>Samochody</button>
                             <button id='pracownicy' className={classes.buttonNav} onClick={onClickEvent}>Pracownicy</button>
                             <button id='przejazdy' className={classes.buttonNav} onClick={onClickEvent}>Przejazdy</button>
-                            <button id='raporty' className={classes.buttonNav} onClick={onClickEvent}>Raporty</button>
                         </div> : ''
                         }
                         </h6>
                     </div>
                     <div className="card-body">
+                        {
+                        buttonId === '' && <Schedule />
+                        }
                         {
                         buttonId === 'grafik' && <Schedule />
                         }
@@ -64,9 +66,6 @@ const AdminPage = () => {
                         }
                         {
                         buttonId === 'przejazdy' && <AdminReservations />
-                        }
-                        {
-                        buttonId === 'raporty' && 'raporty'
                         }
                     </div>
                 </div>
