@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import styles from './NavbarHome.module.sass'
 import './hamburger/hamburgers.scss'
-import { Link, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 const NavbarHome = () => {
 
@@ -10,7 +10,9 @@ const NavbarHome = () => {
     const goToLogin=()=>{
         history.push('/login')
     }
-
+    const goToTimeTable=()=>{
+        history.push('/timeTable')
+    }
     return (
         <div className={styles.container} title='navbarHome'>
             <div className={styles.header}>
@@ -19,10 +21,10 @@ const NavbarHome = () => {
             </div>
             <div className={styles.navbarItems}>
                 <div className={styles.navbarItem}>
-                    <Link to="/timeTable">Rozkłady</Link>
+                    <a href="/timeTable">Rozkłady</a>
                 </div>
                 <div className={styles.navbarItem}>
-                    <Link to="/contact">Kontakt</Link>
+                    <p href="/contact" onClick={goToTimeTable}>Kontakt</p>
                 </div>
                 {/* <div className={styles.navbarItemLogin}>
                     <a href="/">Panel klienta</a>
