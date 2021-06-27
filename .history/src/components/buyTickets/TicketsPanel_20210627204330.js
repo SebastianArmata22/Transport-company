@@ -24,7 +24,7 @@ const TicketsPanel = ({tickets, user, setShowShopping,setUserData}) => {
     const discount=async ()=>{
         if((parseFloat(tickets.price)-parseFloat(price))===0){
             if(user.points>0){
-                setPrice(prevState=>Math.round((prevState-user.points/10)*100)/100<0 ? 0: Math.round((prevState-user.points/10)*100)/100)
+                setPrice(Math.round((prevState-user.points/10)*100)/100<0 ? 0: prevState=>Math.round((prevState-user.points/10)*100)/100)
                 NotificationManager.success('Wykorzystano punkty')
                 await database.collection("users").doc(uid).update({
                     points: 0
