@@ -9,7 +9,7 @@ import AccountPage from './components/account/AccountPage';
 import AdminPage from './components/admins/AdminPage';
 import 'react-notifications/lib/notifications.css';
 import {NotificationContainer} from 'react-notifications';
-import TimeTablePanel from './components/timetable/TimeTablePanel';
+import TimeTable from './components/timetable/TimeTable';
 
 function App() {
   return (
@@ -35,7 +35,7 @@ function App() {
                 <AdminPage />
               </Route>
               <Route path="/timeTable">
-                <TimeTablePanel />
+                <TimeTable />
               </Route>
             </Switch>
           </Router>
