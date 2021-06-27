@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import styles from './NavbarHome.module.sass'
 import './hamburger/hamburgers.scss'
-import { Link, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 const NavbarHome = () => {
 
@@ -19,10 +19,10 @@ const NavbarHome = () => {
             </div>
             <div className={styles.navbarItems}>
                 <div className={styles.navbarItem}>
-                    <Link to="/timeTable">Rozkłady</Link>
+                    <a href="/timeTable">Rozkłady</a>
                 </div>
                 <div className={styles.navbarItem}>
-                    <Link to="/contact">Kontakt</Link>
+                    <a href="/contact">Kontakt</a>
                 </div>
                 {/* <div className={styles.navbarItemLogin}>
                     <a href="/">Panel klienta</a>

@@ -32,13 +32,13 @@ useEffect(() => {
                 <Navbar user={user}/>
             </nav>
             <main>
-            {showShopping? <TicketsPanel tickets={tickets} user={user} setShowShopping={setShowShopping} setUserData={setUser} />:
+            {showShopping? <TicketsPanel tickets={tickets} user={user} setShowShopping={setShowShopping} setUserData={setUser} text="Kup bilet"/>:
             <div>
                 <div className={classes.points}>
                     <div >{user.points}pkt.</div>
                 </div>
 
-                <TimeTable setTickets={setTickets} setShowShopping={setShowShopping} text="Kup bilet"/>
+                <TimeTable setTickets={setTickets} setShowShopping={setShowShopping}/>
                 <Reservations />
                 <BuyTickets/>
                 </div>}
